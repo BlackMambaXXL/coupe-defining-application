@@ -1,6 +1,8 @@
 function getCoupeNumber(placeNum) {
     if (isNaN(placeNum) === true || placeNum % 2 != (0 || 1) || placeNum < 0 ) {
         console.log("Ошибка. Проверьте правильность введенного числа.");
+    } else if (placeNum === 0 || placeNum > 36) {
+        console.log("Таких мест в вагоне не существует");
     } else if ((placeNum / 2) % 2 === 0) {
         const evenResult = (placeNum / 2) / 2;
         console.log(`Номер вашего купе - ${evenResult}.`);
@@ -15,5 +17,4 @@ function getCoupeNumber(placeNum) {
         console.log(`Номер вашего купе - ${evenResult}.`);
     }
 }
-getCoupeNumber(-16);
-
+getCoupeNumber(prompt("Введите номер вашего места.", ""));
